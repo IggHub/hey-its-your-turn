@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
+gem "simple_calendar", "~> 2.0"
 
 group :development, :test do
   gem 'sqlite3', '1.3.12'
@@ -37,6 +38,7 @@ group :test do
   gem 'launchy', '~> 2.4', '>= 2.4.3'
   gem 'selenium-webdriver', '~> 2.53', '>= 2.53.4'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'rails-controller-testing'
 end
 
 group :production do

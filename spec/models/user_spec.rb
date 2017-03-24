@@ -4,6 +4,10 @@ RSpec.describe User, type: :model do
   context "valid user attributes" do
     let(:user) {FactoryGirl.build(:user)}
 
+    it "save the specified attributes" do
+      expect(user).to have_attributes(name: user.name, email: user.email, password: user.password)
+    end
+    
     it "accepts valid user" do
       expect(user).to be_valid
     end

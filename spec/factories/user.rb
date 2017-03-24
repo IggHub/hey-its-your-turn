@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :user do
-    id 1
+    sequence(:id) {|n| n}
     sequence(:name) {|n| "iggy#{n}"}
     sequence :email do |n|
       "iggy#{n}@gmail.com"

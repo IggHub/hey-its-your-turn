@@ -6,6 +6,7 @@ RSpec.describe WelcomeController, type: :controller do
     it "returns http success" do
       get :about
       expect(response).to have_http_status(:success)
+      expect(response).to render_template("about")
     end
   end
 
@@ -13,6 +14,7 @@ RSpec.describe WelcomeController, type: :controller do
     it "returns http success" do
       get :index
       expect(response).to have_http_status(:success)
+      expect(response).to render_template("index")
     end
   end
 end

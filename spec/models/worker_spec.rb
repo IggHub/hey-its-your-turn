@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Worker, type: :model do
   it {should belong_to(:user)}
+  it {should belong_to(:schedule)}
 
   context "valid worker attributes" do
     it {validate_presence_of(:name)}

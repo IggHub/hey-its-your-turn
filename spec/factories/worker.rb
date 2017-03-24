@@ -4,5 +4,6 @@ FactoryGirl.define do
     sequence(:email) {|n| "worker#{n}@email.com"}
     phone "123-456-7890"
     user
+    schedule
   end
 end
