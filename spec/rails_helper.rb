@@ -6,6 +6,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
+require_relative 'support/user_helpers'
 include Warden::Test::Helpers
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -62,4 +63,5 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+  config.include UserHelpers
 end

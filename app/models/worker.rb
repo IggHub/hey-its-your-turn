@@ -1,6 +1,9 @@
 class Worker < ApplicationRecord
   belongs_to :user
   validates :name, presence: true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+  
+  validates :phone, length: {maximum: 20}
   validate :email_or_phone
 
   private

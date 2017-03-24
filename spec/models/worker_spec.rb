@@ -25,6 +25,5 @@ RSpec.describe Worker, type: :model do
         expect(worker).to_not be_valid
       end
     end
-
   end
 end
