@@ -14,5 +14,6 @@ module HeyItsYourTurn
     config.generators do |g|
       g.factory_girl false
     end
+    config.autoload_paths << File.join(config.root, "lib")
   end
 end
