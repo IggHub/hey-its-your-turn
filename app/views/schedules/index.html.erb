@@ -1,2 +1,11 @@
-<h1>Schedules#index</h1>
-<p>Find me in app/views/schedules/index.html.erb</p>
+<h1>List of Schedules: </h1>
+
+<% @schedules.each do |schedule| %>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+        <p><%= link_to schedule.title, schedule %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
