@@ -1,2 +1,10 @@
-<h1>Schedules#edit</h1>
-<p>Find me in app/views/schedules/edit.html.erb</p>
+<h1>Edit schedules</h1>
+<%= form_for @schedule do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :due_at %>
+  <%= f.date_field :due_at %>
+
+  <%= f.submit %>
+<% end %>
