@@ -29,9 +29,21 @@ class SchedulesController < ApplicationController
   def update
     @schedule = Schedule.find(params[:id])
     if @schedule.update(schedule_params)
-      redirect_to @schedule, notice: 'Schedule was succesfffully updated'
+      flash[:notice] = "Schedule was successfully updated"
+      redirect_to @schedule
     else
       render :edit
+    end
+  end
+
+  def destroy
+    @schedule = Schedule.find(params[:id])
+    if @schedule.destroy
+      flash[:notice] = "\"#{@schedule.title}\" was deleted successfully"
+      redirect_to schedules_path
+    else
+      flash[:alert] = "Error deleting schedule"
+      render :show
     end
   end
 

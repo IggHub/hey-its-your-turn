@@ -13,18 +13,13 @@ RSpec.describe SchedulesController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      get :show, id: :schedule
+      get :show, id: schedule.id
       expect(response).to have_http_status(:success)
     end
 
     it "renders show view" do
-      get :show, id: :schedule
+      get :show, id: schedule.id
       expect(response).to render_template(:show)
-    end
-
-    it "assigns schedule to @schedule" do
-      get :show, id: :schedule
-      assigns(:schedule).to eq(:schedule)
     end
   end
 
@@ -89,6 +84,19 @@ RSpec.describe SchedulesController, type: :controller do
       expect(updated_schedule.id).to eq schedule.id
       expect(updated_schedule.title).to eq new_title
       expect(updated_schedule.due_at.to_s).to eq new_due_at.utc.to_s #to_s because time RSpec testing differs by a few milliseconds
+    end
+  end
+
+  describe "DELETE destroy" do
+    it "deletes the schedule" do
+      delete :destroy, id: schedule.id
+      count = Schedule.where(id: schedule.id).size
+      expect(count).to eq(0)
+    end
+
+    it "redirects to schedule index" do
+      delete :destroy, id: schedule.id
+      expect(response).to redirect_to schedules_path
     end
   end
 end

@@ -1,10 +1,24 @@
-<h1>Edit schedules</h1>
-<%= form_for @schedule do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-
-  <%= f.label :due_at %>
-  <%= f.date_field :due_at %>
-
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <h1>Edit schedules</h1>
+    <div class="col-md-4">
+      <h3>Hello!</h3>
+      <p>Please edit the schedule carefully!</p>
+    </div>
+    <div class="col-md-8">
+      <%= form_for @schedule do |f| %>
+        <div class="form-group">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :due_at %>
+          <%= f.date_field :due_at, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.submit "Submit", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

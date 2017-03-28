@@ -2,3 +2,6 @@
 
 <h3><%= @schedule.title %></h3>
 <p><em>Due: <%= @schedule.due_at.strftime("%a, %B %d %Y") %></em></p>
+
+<%= link_to "Edit", edit_schedule_path(@schedule), class: "btn btn-primary" %>
+<%= link_to "Delete Schedule", @schedule, method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure you want to delete scehdule?"} %>
