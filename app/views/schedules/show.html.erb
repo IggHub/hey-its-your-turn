@@ -1,2 +1,4 @@
-<h1>Schedules#show</h1>
-<p>Find me in app/views/schedules/show.html.erb</p>
+<h1>Schedule:</h1>
+
+<h3><%= @schedule.title %></h3>
+<p><em>Due: <%= @schedule.due_at.strftime("%a, %B %d %Y") %></em></p>

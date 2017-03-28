@@ -9,8 +9,18 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <%= flash[:notice] %>
+        <button type="button" class="close" data-dimiss="alert">&times;</button>
+      </div>
+    <% elsif flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+        <button type="button" class="close" data-dimiss="alert">&times;</button>
+      </div>
+    <% end %>
 
       <% if user_signed_in? %>
         <li>
